@@ -17,6 +17,7 @@
 	default-autowire="byName" default-lazy-init="false">
 
 	<context:component-scan base-package="controller" />
+	<context:component-scan base-package="service.imp" />
 	
 	<task:annotation-driven />
 
@@ -25,5 +26,7 @@
 		<property name="maxUploadSize" value="5242880"/>
 	</bean>
 
+	<!-- 引用@Autowired注入工具类 -->
+	<bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor" />
 
 </beans>

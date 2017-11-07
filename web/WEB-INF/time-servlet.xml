@@ -15,7 +15,11 @@
     <mvc:annotation-driven/>
 
     <!-- 设置使用注解的类所在的jar包 -->
-    <context:component-scan base-package="controller" />
+
+    <context:component-scan base-package="controller">
+        <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Service" />
+    </context:component-scan>
+    <!--  <context:component-scan base-package="controller"  /> -->
 
     <!-- 处理方法级别上的@RequestMapping注解 -->
     <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">
